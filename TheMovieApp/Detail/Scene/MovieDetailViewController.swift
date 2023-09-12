@@ -72,7 +72,7 @@ class MovieDetailViewController: UIViewController, MovieDetailPresenterToView, U
     }
     
     func updateReview(review: [ReviewViewModel]) {
-        hasMoreData = reviews.count != 0
+        hasMoreData = review.count != 0
         if hasMoreData {
             currentPage += 1
         }
@@ -139,6 +139,7 @@ extension MovieDetailViewController: UITableViewDelegate, UITableViewDataSource 
         cell.reviewBackgroundView.backgroundColor = .systemGray6
         cell.reviewBackgroundView.layer.cornerRadius = 8
         cell.setupCell(reviewViewModel: reviews[indexPath.row])
+        cell.selectionStyle = .none
         return cell
     }
     

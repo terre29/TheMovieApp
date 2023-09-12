@@ -137,6 +137,7 @@ extension DiscoverViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieTableViewCell else { return UITableViewCell() }
         cell.initSetupCell()
+        cell.selectionStyle = .none
         cell.setupCell(viewModel: movie[indexPath.row])
         return cell
     }
